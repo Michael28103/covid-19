@@ -19,7 +19,15 @@ function App() {
     "Worldwide"
   ])
   const [countryInfo, setCountryInfo] = useState({});
+  const [mapCountries, setMapCountries] = useState([]);
   const [tableData, setTableData] = useState({});
+  const [casesType, setCasesType] = useState("cases");
+  const [mapCenter, setMapCenter] = useState({ lat: 32.7502, lng: 114.7655 });
+  const [mapZoom, setMapZoom] = useState(3);
+
+
+
+
   useEffect(() => {
     fetch ("https://disease.sh/v3/covid-19/all")
     .then(response => response.json())
@@ -44,9 +52,10 @@ function App() {
           }
         ));
         
-        const sorted = sortData(data);
+        let sorted = sortData(data);
         setTableData(sorted);
         setCountries(countries);
+        setMapCountries(data);
       });
     };
     // This is calling the function
@@ -71,6 +80,8 @@ function App() {
       setCountry(countryCode);
       // Stores the response of the country info into a var
       setCountryInfo(data);
+      setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+      setMapZoom(4);
     });
   };
 
@@ -82,29 +93,30 @@ function App() {
         <Header>
           <h1> COVID-19 Tracker </h1>
           <FormControl className = "dropdown">
-            <Select variant="outlined" onChange={countryChange} value={country}>
-              <MenuItem value="Worldwide">Worldwide</MenuItem>
+            <Select variant= "outlined" onChange={countryChange} value={country}>
+              <MenuItem selected classes={{ root: 'MenuItem', selected: 'selected' }} value="Worldwide">Worldwide</MenuItem>
               {
                 countries.map( country => (
                   <MenuItem value={country.value}>{country.name}</MenuItem>
                  ))
               }
-              {/* <MenuItem value="countries">1</MenuItem>
-                  <MenuItem value="countries">2</MenuItem>
-                  <MenuItem value="countries">3</MenuItem>
-                  <MenuItem value="countries">4</MenuItem> */}
             </Select>
           </FormControl>
         </Header>
         <Info>
-          <InfoBox title="COVID-19"  cases={countryInfo.todayCases} total={countryInfo.cases}/>
-          <InfoBox title="Recoverd"  cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
-          <InfoBox title="Deaths"  cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
+          <InfoBox onClick={(e) => setCasesType("cases")} title="COVID-19"  cases={countryInfo.todayCases} total={countryInfo.cases}/>
+          <InfoBox onClick={(e) => setCasesType("recovered")} title="Recoverd"  cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
+          <InfoBox onClick={(e) => setCasesType("deaths")} title="Deaths"  cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
         </Info>
-        <Map />
+        <Map
+          countries={mapCountries}
+          casesType={casesType}
+          center={mapCenter}
+          zoom={mapZoom}
+        />
       </Left>
       <Right>
-        <Card>
+        <Card classes={{ label: 'cards' }}>
           <CardContent>
             <h1>Current Cases by Country</h1>
             <Table countries={tableData} />
@@ -118,23 +130,36 @@ function App() {
 
 
 const Container = styled.div `
-  background-color: white;
+
+  background-color: #000000;
   height: 100vh;
   width: 100%;
   display: flex; 
   justify-content: space-evenly;
-  padding: 20px;
 
   @media (max-width: 890px) {
     flex-direction: column;
   }
+  .dropdown {
+    background-color: white; 
+    border-radius: 6px;
+  }
 `
 const Left = styled.div `
   flex: 0.9;
+
+  h1 {
+    color: GhostWhite;
+  }
 `
 const Right = styled.div `
+  padding: 15px;
   h1 {
     font-size: 22px;
+    color: black;
+  }
+  cards {
+    color: #121212;
   }
 `
 
@@ -144,13 +169,10 @@ const Header = styled.div `
   justify-content: space-between;
 `
 
-const dropdown = styled.div `
-  background-color: white; 
-`
-
 const Info = styled.div `
   display:flex;
   justify-content: space-between;
+  padding-top: 10px;
 `
 
 export default App;
