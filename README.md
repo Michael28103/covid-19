@@ -21,18 +21,12 @@ A modern, responsive web application for tracking COVID-19 cases worldwide. Buil
 
 ## Screenshots
 
-*Note: Add actual screenshots to the `screenshots/` folder*
-
-### Desktop View
-![Desktop Screenshot](./screenshots/desktop.png)
+<img width="1909" height="947" alt="image" src="https://github.com/user-attachments/assets/01f72ed1-98e8-4b27-8d13-42c11dc39043" />
 *Main dashboard showing global stats, country selector, map, and data table*
 
-### Mobile View
-![Mobile Screenshot](./screenshots/mobile.png)
-*Responsive layout optimized for mobile devices*
 
 ### Map Interaction
-![Map Screenshot](./screenshots/map.png)
+<img width="1906" height="933" alt="image" src="https://github.com/user-attachments/assets/605e5fa5-420c-4cc0-ac19-9e94fb042add" />
 *Interactive map with case data visualization*
 
 ## Getting Started
@@ -46,7 +40,7 @@ A modern, responsive web application for tracking COVID-19 cases worldwide. Buil
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/covid-tracker.git
+   git clone https://github.com/Michael28103/covid-tracker.git
    cd covid-tracker
    ```
 
@@ -91,10 +85,6 @@ This app uses the [disease.sh](https://disease.sh/) API for COVID-19 data:
 
 - `/v3/covid-19/all` - Global statistics
 - `/v3/covid-19/countries` - Country-specific data
-
-## Showcase
-
-<img width="1906" height="933" alt="image" src="https://github.com/user-attachments/assets/df55f1c7-64b8-48a7-82f8-7ce693a6ba36" />
 
 
 ## License
