@@ -1,11 +1,10 @@
-import React from 'react'
 // import styled from 'styled-components'
 import { MapContainer, TileLayer, useMap } from "react-leaflet"
-import { showDataOnMap } from '../util'
+import { showDataOnMap } from '../util.jsx'
 import "./Map.css"
 import 'leaflet/dist/leaflet.css';
 
-function Map({ countries, casesType, center, zoom }) {
+export default function Map({ countries, casesType, center, zoom }) {
     function ChangeView({ center, zoom }) {
       const map = useMap();
       map.setView(center, zoom);
@@ -19,6 +18,7 @@ function Map({ countries, casesType, center, zoom }) {
             center={center}
             zoom={zoom}
             scrollWheelZoom={true}
+            style={{ border: '4px solid #ddd', borderRadius: '8px' }}
         >
             <ChangeView center={center} zoom={zoom} />
             <TileLayer
@@ -29,4 +29,3 @@ function Map({ countries, casesType, center, zoom }) {
         </MapContainer>
     );
   }
-export default Map

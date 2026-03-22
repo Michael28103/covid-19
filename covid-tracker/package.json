@@ -3,25 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "chart.js": "^3.2.0",
-    "leaflet": "^1.7.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.3.9",
+    "@mui/material": "^7.3.9",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "chart.js": "^4.5.1",
+    "leaflet": "^1.9.4",
     "numeral": "^2.0.6",
-    "react": "^17.0.2",
-    "react-chartjs-2": "^3.0.2",
-    "react-dom": "^17.0.2",
-    "react-leaflet": "^3.2.0",
-    "react-scripts": "4.0.3",
-    "styled-components": "^5.2.3",
-    "web-vitals": "^1.1.1"
+    "react": "^19.2.4",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.4",
+    "react-leaflet": "^5.0.0",
+    "styled-components": "^6.3.12",
+    "web-vitals": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "vite",
+    "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -35,5 +36,9 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.1"
+  }
 }

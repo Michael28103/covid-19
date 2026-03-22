@@ -18,6 +18,10 @@ export const sortData = (data) => {
     
 }
 
+export const formatNumber = (num) => {
+    return numeral(num).format("0,0");
+}
+
 const casesTypeColors = {
     cases: {
       hex: "#CC1034",
@@ -40,8 +44,9 @@ const casesTypeColors = {
   };
 
 export const showDataOnMap = (data, casesType) =>
-  data.map((country) => (
+  data.map((country, index) => (
     <Circle
+      key={index}
       center={[country.countryInfo.lat, country.countryInfo.long]}
       color={casesTypeColors[casesType].hex}
       fillColor={casesTypeColors[casesType].hex}

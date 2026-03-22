@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { FormControl, Select, MenuItem,
-  Card, CardContent, Typography } from '@material-ui/core'
-import InfoBox from './Components/InfoBox.js'
-import Map from './Components/Map.js'
-import Table from './Components/Table.js'
-import { sortData } from "./util"
+  Card, CardContent, Typography } from '@mui/material'
+import InfoBox from './Components/InfoBox.jsx'
+import Map from './Components/Map.jsx'
+import Table from './Components/Table.jsx'
+import { sortData } from "./util.jsx"
 // import Graph from "./Components/Graph.js"
 
 // State is how to write a variable in react
 // UseEffect runs a piece of code based on a given condition
-function App() {
-
-  const [countries, setCountries] = useState([
-
-  ]);
+export function App() {
+  const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState([
     "Worldwide"
   ])
   const [countryInfo, setCountryInfo] = useState({});
   const [mapCountries, setMapCountries] = useState([]);
-  const [tableData, setTableData] = useState({});
+  const [tableData, setTableData] = useState([]);
   const [casesType, setCasesType] = useState("cases");
   const [mapCenter, setMapCenter] = useState({ lat: 32.7502, lng: 114.7655 });
   const [mapZoom, setMapZoom] = useState(3);
@@ -85,8 +82,6 @@ function App() {
     });
   };
 
-  console.log('Country Info: ', countryInfo)
-
   return (
     <Container>
       <Left>
@@ -116,7 +111,7 @@ function App() {
         />
       </Left>
       <Right>
-        <Card classes={{ label: 'cards' }}>
+        <Card classes={{ label: 'cards' }} sx={{ border: '2px solid #ddd', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', borderRadius: '8px', backgroundColor: '#f0f0f0' }}>
           <CardContent>
             <h1>Current Cases by Country</h1>
             <Table countries={tableData} />
@@ -131,25 +126,29 @@ function App() {
 
 const Container = styled.div `
 
-  background-color: #000000;
+  background-color: #f8f9fa;
   height: 100vh;
   width: 100%;
   display: flex; 
   justify-content: space-evenly;
+  color: #333;
 
   @media (max-width: 890px) {
     flex-direction: column;
   }
   .dropdown {
-    background-color: white; 
+    background-color: #f0f0f0; 
     border-radius: 6px;
+    color: #333;
   }
 `
 const Left = styled.div `
   flex: 0.9;
 
   h1 {
-    color: GhostWhite;
+    color: #333;
+    font-weight: 700;
+    font-size: 2.5rem;
   }
 `
 const Right = styled.div `
