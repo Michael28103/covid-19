@@ -11,7 +11,7 @@ export default function InfoBox({ title, cases, total }) {
                 </Typography>
                 <h2 className="cases">{formatNumber(cases)}</h2>
                 <Typography className="total" color="textSecondary">
-                    {formatNumber(total)} Total
+                    {formatNumber(total)} Today
                 </Typography>
             </CardContent>
         </Card>

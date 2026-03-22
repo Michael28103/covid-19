@@ -99,9 +99,9 @@ export function App() {
           </FormControl>
         </Header>
         <Info>
-          <InfoBox onClick={(e) => setCasesType("cases")} title="COVID-19"  cases={countryInfo.todayCases} total={countryInfo.cases}/>
-          <InfoBox onClick={(e) => setCasesType("recovered")} title="Recoverd"  cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
-          <InfoBox onClick={(e) => setCasesType("deaths")} title="Deaths"  cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
+          <InfoBox onClick={(e) => setCasesType("cases")} title="COVID-19"  cases={countryInfo.cases} total={countryInfo.todayCases}/>
+          <InfoBox onClick={(e) => setCasesType("recovered")} title="Recovered"  cases={countryInfo.recovered} total={countryInfo.todayRecovered}/>
+          <InfoBox onClick={(e) => setCasesType("deaths")} title="Deaths"  cases={countryInfo.deaths} total={countryInfo.todayDeaths}/>
         </Info>
         <Map
           countries={mapCountries}
