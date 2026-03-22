@@ -92,13 +92,10 @@ This app uses the [disease.sh](https://disease.sh/) API for COVID-19 data:
 - `/v3/covid-19/all` - Global statistics
 - `/v3/covid-19/countries` - Country-specific data
 
-## Contributing
+## Showcase
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -am 'Add new feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
+<img width="1906" height="933" alt="image" src="https://github.com/user-attachments/assets/df55f1c7-64b8-48a7-82f8-7ce693a6ba36" />
+
 
 ## License
 
@@ -107,25 +104,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - Data provided by [disease.sh](https://disease.sh/)
-- Icons and UI components from [Material-UI](https://mui.com/)
-- Mapping powered by [Leaflet](https://leafletjs.com/)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 
